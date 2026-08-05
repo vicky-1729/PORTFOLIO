@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initExpandableDetails();
     initProjectModalActions();
     initCertificationCards();
+    initContactInfoCards();
     initInteractiveHighlights();
 });
 
@@ -662,6 +663,31 @@ function initCertificationCards() {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 window.open(credentialLink.href, '_blank', 'noopener,noreferrer');
+            }
+        });
+    });
+}
+
+function initContactInfoCards() {
+    const infoCards = document.querySelectorAll('.contact-info .info-card');
+
+    infoCards.forEach(card => {
+        const primaryLink = card.querySelector('.info-details a[href]');
+        if (!primaryLink) return;
+
+        card.classList.add('is-clickable');
+        card.setAttribute('role', 'link');
+        card.setAttribute('tabindex', '0');
+
+        card.addEventListener('click', (event) => {
+            if (event.target.closest('a')) return;
+            primaryLink.click();
+        });
+
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                primaryLink.click();
             }
         });
     });
