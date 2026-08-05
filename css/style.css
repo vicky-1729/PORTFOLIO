@@ -1399,9 +1399,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    CONTACT
    ========================================================================== */
 
-.contact-content { display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); }
+.contact-content { display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); justify-items: center; }
 .contact-content > * { min-width: 0; }
-.contact-info { display: flex; flex-direction: column; gap: 1.1rem; max-width: 780px; }
+.contact-info { display: flex; flex-direction: column; gap: 1.1rem; max-width: 780px; width: 100%; margin: 0 auto; }
 
 .info-card {
     display: flex;
