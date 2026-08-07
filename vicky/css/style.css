@@ -242,7 +242,7 @@ button {
 }
 .loader i {
   font-size: 2.75rem;
-  color: var(--primary-color);
+  color: #FF9900;
   animation: float 2s ease-in-out infinite;
 }
 .loading-text {
@@ -322,6 +322,13 @@ button {
   color: var(--primary-color);
   font-family: var(--font-mono);
   font-weight: 500;
+}
+
+.nav-brand a i {
+  margin-right: 0.5rem;
+  color: #FF9900;
+  font-size: 1.5rem;
+  vertical-align: middle;
 }
 
 .nav-menu {
