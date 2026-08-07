@@ -197,13 +197,16 @@ function initCounters() {
         const increment = target / speed;
         let count = 0;
 
+        const suffix = counter.getAttribute("data-suffix") || "";
+        
         const updateCounter = () => {
           count += increment;
           if (count < target) {
-            counter.textContent = Math.ceil(count);
+            counter.textContent = Math.ceil(count) + suffix;
             requestAnimationFrame(updateCounter);
           } else {
-            counter.textContent = target % 1 === 0 ? target : target.toFixed(1);
+            const finalValue = target % 1 === 0 ? target : target.toFixed(1);
+            counter.textContent = finalValue + suffix;
           }
         };
 
