@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
   initProgressBars();
   initThemeToggle();
-  initContactForm();
 });
 
 function initNavigation() {
@@ -177,70 +176,3 @@ function updateIcon(toggle, theme) {
   }
 }
 
-function initContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
-
-  const fields = {
-    name: document.getElementById("name"),
-    email: document.getElementById("email"),
-    message: document.getElementById("message"),
-  };
-
-  const errors = {
-    name: document.getElementById("name-error"),
-    email: document.getElementById("email-error"),
-    message: document.getElementById("message-error"),
-  };
-
-  const status = document.getElementById("form-status");
-
-  const setError = (key, text) => {
-    errors[key].textContent = text;
-  };
-
-  const clearErrors = () => {
-    Object.keys(errors).forEach((key) => {
-      errors[key].textContent = "";
-    });
-    status.textContent = "";
-  };
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    clearErrors();
-
-    let valid = true;
-
-    if (!fields.name.value.trim()) {
-      setError("name", "Please enter your name.");
-      valid = false;
-    }
-
-    const emailValue = fields.email.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailValue) {
-      setError("email", "Please enter your email.");
-      valid = false;
-    } else if (!emailRegex.test(emailValue)) {
-      setError("email", "Please enter a valid email address.");
-      valid = false;
-    }
-
-    if (!fields.message.value.trim()) {
-      setError("message", "Please enter your message.");
-      valid = false;
-    }
-
-    if (!valid) {
-      status.textContent = "Please fix the highlighted fields.";
-      status.style.color = "#b42d2d";
-      return;
-    }
-
-    status.textContent =
-      "Message validated successfully. Connect via email or phone to continue.";
-    status.style.color = "#1d6b3a";
-    form.reset();
-  });
-}
