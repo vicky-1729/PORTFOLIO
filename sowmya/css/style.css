@@ -389,6 +389,26 @@ li {
   letter-spacing: -0.03em;
 }
 
+.experience-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: var(--white);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--normal) var(--ease-spring), box-shadow var(--normal) var(--ease);
+  white-space: nowrap;
+}
+
+.experience-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
 .title-line {
   margin-bottom: 1.5rem;
   min-height: 2.5rem;
