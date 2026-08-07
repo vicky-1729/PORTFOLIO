@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540"/>
+      <stop offset="100%" stop-color="#123A5E"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E7C873"/>
+      <stop offset="50%" stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#A9821B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="248" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="6"/>
+
+  <!-- Thin inner ring for a classic badge feel -->
+  <circle cx="256" cy="256" r="214" fill="none" stroke="#C9A227" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Monogram S -->
+  <text x="256" y="330"
+        font-family="Playfair Display, Georgia, 'Times New Roman', serif"
+        font-size="300"
+        font-weight="700"
+        text-anchor="middle"
+        fill="url(#goldGrad)">S</text>
+
+  <!-- Small decorative underline -->
+  <rect x="176" y="358" width="160" height="4" rx="2" fill="#C9A227" opacity="0.85"/>
+</svg>
